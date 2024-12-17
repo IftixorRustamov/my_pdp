@@ -5,5 +5,4 @@ class AppStrings {
   static const String aboutUniversity = "About University";
   static const String eventsAndHolidays = "Events/Holidays";
   static const String info = "info";
-  static const String discover = "Discover";
 }

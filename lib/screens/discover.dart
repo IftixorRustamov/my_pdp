@@ -154,7 +154,7 @@ class DiscoverScreen extends StatelessWidget {
                       children: [
                         Image.asset(IconPaths.search),
                         Text(
-                          AppStrings.discover,
+                          "Discover",
                           style: TextStyle(
                               color: AppColors.black,
                               fontSize: 24,
