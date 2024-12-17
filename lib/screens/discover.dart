@@ -5,6 +5,8 @@ import 'package:my_pdp/common/app_strings.dart';
 import 'package:my_pdp/common/img_paths.dart';
 import 'package:my_pdp/widgets/header_part_wg.dart';
 
+import '../common/icon_paths.dart';
+
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
 
