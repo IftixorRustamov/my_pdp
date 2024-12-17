@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-       // App Bar Part
+      // App Bar Part
       appBar: AppBar(
         toolbarHeight: Responsive.height(0.09),
         backgroundColor: AppColors.silver,
@@ -72,7 +72,7 @@ class _MainPageState extends State<MainPage> {
                       fontWeight: FontWeight.w600),
                 ),
                 Text(
-                  "UNIVERSITY",
+                  AppStrings.university,
                   style: TextStyle(
                       height: Responsive.height(0.0012),
                       fontSize: Responsive.height(0.023),
@@ -111,12 +111,12 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  // Widget _buildIcon(String assetPath, int index) {
-  //   return Image.asset(
-  //     color: _currentIndex == index ? AppColors.green : AppColors.grey,
-  //     assetPath,
-  //     height: 40,
-  //     width: 40,
-  //   );
-  // }
+// Widget _buildIcon(String assetPath, int index) {
+//   return Image.asset(
+//     color: _currentIndex == index ? AppColors.green : AppColors.grey,
+//     assetPath,
+//     height: 40,
+//     width: 40,
+//   );
+// }
 }
