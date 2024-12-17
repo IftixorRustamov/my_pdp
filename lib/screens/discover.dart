@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_colors.dart';
 import 'package:my_pdp/common/app_responsive.dart';
-import 'package:my_pdp/common/app_strings.dart';
 import 'package:my_pdp/common/icon_paths.dart';
 import 'package:my_pdp/common/img_paths.dart';
 
