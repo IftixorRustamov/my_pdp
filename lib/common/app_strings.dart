@@ -14,6 +14,10 @@ class AppStrings {
   static const String twoHundredPlusSub = "Xodim va mentorlar";
   static const String twoThousandPlus = "+ 2000";
   static const String twoThousandPlusSub = "PDP bitiruvchilari";
-  static const String pdpInfo =
+  static const String btec = "BTEC Pearson";
+  static const String pdpEvents = "PDP University Events";
+  static const String pdpInfo = "PDP University Information";
+  static const String pdpModules = "PDP University Modules";
+  static const String pdpCardInfo =
       "O'zbekistonda IT mutaxassislar elitasini shakllantirishni o'z oldiga maqsad qilib qo'ygan ekotizim";
 }

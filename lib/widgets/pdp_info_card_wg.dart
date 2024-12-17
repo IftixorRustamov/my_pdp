@@ -35,7 +35,7 @@ class PDPInfoCard extends StatelessWidget {
           ),
           // Subtitle
           Text(
-            AppStrings.pdpInfo,
+            AppStrings.pdpCardInfo,
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: AppColors.white,
