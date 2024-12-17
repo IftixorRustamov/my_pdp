@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_colors.dart';
 import 'package:my_pdp/common/app_strings.dart';
 import 'package:my_pdp/common/icon_paths.dart';
+import 'package:my_pdp/widgets/subject_card_wg.dart';
 
 class SubjectsPage extends StatelessWidget {
   const SubjectsPage({super.key});
@@ -24,6 +25,17 @@ class SubjectsPage extends StatelessWidget {
                     fontFamily: "Inter"),
               ),
             ],
+          ),
+          Expanded(
+            child: GridView.builder(
+              itemCount: 9,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+              ),
+              itemBuilder: (BuildContext context, int index) => SubjectCardWg(
+                index: index,
+              ),
+            ),
           )
         ],
       ),
