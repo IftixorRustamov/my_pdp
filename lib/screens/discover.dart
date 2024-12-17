@@ -18,12 +18,12 @@ class DiscoverScreen extends StatelessWidget {
         // Menu Button
         leading: Icon(
           Icons.menu,
-          size: Responsive.height(0.04),
+          size: Responsive.height(0.038),
         ),
         actions: [
           Icon(
             Icons.person_outline_rounded,
-            size: Responsive.height(0.04),
+            size: Responsive.height(0.038),
           ),
           SizedBox(
             width: Responsive.width(0.03),
@@ -67,7 +67,94 @@ class DiscoverScreen extends StatelessWidget {
       body: SizedBox(
         width: double.infinity,
         child: Column(
-          children: [],
+          children: [
+            // Body Top Text Part
+            Container(
+              width: double.infinity,
+              height: Responsive.height(0.15),
+              decoration: BoxDecoration(color: AppColors.darkCyanGreen),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "BTEC Pearson",
+                    style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: Responsive.height(0.023)),
+                  ),
+                  SizedBox(
+                    height: Responsive.height(0.013),
+                  ),
+                  Text(
+                    "PDP University Events",
+                    style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: Responsive.height(0.03)),
+                  ),
+                  SizedBox(
+                    height: Responsive.height(0.021),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: Responsive.height(0.02)),
+            // Nerd Guy and Weird Girl Part
+            Container(
+              width: double.infinity,
+              height: Responsive.height(0.3),
+              decoration: BoxDecoration(
+                color: AppColors.darkCyanGreen,
+              ),
+              child: Stack(
+                children: [
+                  Image(
+                    image: AssetImage(ImgPaths.guyAndGirl),
+                    height: Responsive.height(0.3),
+                  ),
+                  Container(
+                    alignment: Alignment.topRight,
+                    child: Transform.translate(
+                      offset: Offset(-Responsive.width(0.0008), 0),
+                      child: Image(
+                        image: AssetImage(ImgPaths.strips),
+                        height: Responsive.height(0.5),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(right: Responsive.width(0.037)),
+                    alignment: Alignment.centerRight,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "BTEC Pearson",
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: Responsive.height(0.025),
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            Text(
+                              "PDP Events",
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: Responsive.height(0.02),
+                                  fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
