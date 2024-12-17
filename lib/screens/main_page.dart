@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_strings.dart';
 import 'package:my_pdp/common/icon_paths.dart';
+import 'package:my_pdp/screens/about_page.dart';
 import 'package:my_pdp/screens/discover.dart';
 import 'package:my_pdp/screens/subjects_page.dart';
 
@@ -21,7 +22,7 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> _pages = [
     SubjectsPage(),
-    // info page
+    AboutPage(),
     DiscoverScreen(),
   ];
 
