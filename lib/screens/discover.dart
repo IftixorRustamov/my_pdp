@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_colors.dart';
 import 'package:my_pdp/common/app_responsive.dart';
@@ -22,8 +23,8 @@ class DiscoverScreen extends StatelessWidget {
         ),
         actions: [
           Icon(
-            Icons.person_outline_rounded,
-            size: Responsive.height(0.038),
+            CupertinoIcons.person_circle,
+            size: Responsive.height(0.04),
           ),
           SizedBox(
             width: Responsive.width(0.03),
