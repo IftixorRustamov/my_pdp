@@ -14,6 +14,11 @@ class SubjectCardWg extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            
+          ],
+        ),
         borderRadius: BorderRadius.circular(10),
       ),
       width: Responsive.width(0.25),
