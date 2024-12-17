@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_colors.dart';
+import 'package:my_pdp/common/app_responsive.dart';
 import 'package:my_pdp/common/app_strings.dart';
 import 'package:my_pdp/common/icon_paths.dart';
 import 'package:my_pdp/widgets/subject_card_wg.dart';
@@ -14,13 +15,15 @@ class SubjectsPage extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            spacing: 10,
             children: [
               Image.asset(IconPaths.search),
               Text(
                 AppStrings.subjects,
                 style: TextStyle(
+                    height: 2,
                     color: AppColors.black,
-                    fontSize: 24,
+                    fontSize: Responsive.height(0.024),
                     fontWeight: FontWeight.w700,
                     fontFamily: "Inter"),
               ),
@@ -29,8 +32,10 @@ class SubjectsPage extends StatelessWidget {
           Expanded(
             child: GridView.builder(
               itemCount: 9,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: Responsive.width(0.31),
+                mainAxisSpacing: Responsive.height(0.015),
+                crossAxisSpacing: Responsive.width(0.033),
               ),
               itemBuilder: (BuildContext context, int index) => SubjectCardWg(
                 index: index,
