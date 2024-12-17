@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_colors.dart';
 import 'package:my_pdp/common/app_responsive.dart';
 import 'package:my_pdp/common/app_strings.dart';
+import 'package:my_pdp/common/colors/app_gradient_colors.dart';
 import 'package:my_pdp/data/subject_data.dart';
 
 class SubjectCardWg extends StatelessWidget {
@@ -16,38 +17,47 @@ class SubjectCardWg extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            
+            AppGradientColors.startingColors[
+                index % AppGradientColors.startingColors.length],
+            AppGradientColors
+                .endingColors[index % AppGradientColors.endingColors.length],
           ],
         ),
         borderRadius: BorderRadius.circular(10),
       ),
       width: Responsive.width(0.25),
-      height: Responsive.height(0.13),
+      height: Responsive.height(0.4),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset("assets/images/image${index + 1}.png"),
+          Align(
+            alignment: Alignment.center,
+            child: Image.asset("assets/images/image${index + 1}.png"),
+          ),
           Text(
             cardNames[index],
             maxLines: 2,
             style: TextStyle(
-              color: AppColors.black,
+              color: AppColors.white,
               fontWeight: FontWeight.w600,
-              fontSize: Responsive.height(0.01),
+              fontSize: Responsive.height(0.011),
             ),
           ),
           Row(
+            spacing: 5,
             children: [
               Icon(
                 Icons.ios_share_outlined,
-                size: 12,
+                size: Responsive.width(0.033),
+                color: AppColors.white,
               ),
               Text(
                 AppStrings.info,
                 style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: Responsive.height(0.01),
-                ),
+                    fontWeight: FontWeight.w400,
+                    fontSize: Responsive.height(0.011),
+                    color: AppColors.white),
               ),
             ],
           )
