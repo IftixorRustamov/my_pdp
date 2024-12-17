@@ -12,59 +12,59 @@ class DiscoverScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       // App Bar Part
-      appBar: AppBar(
-        toolbarHeight: Responsive.height(0.09),
-        backgroundColor: AppColors.silver,
-        centerTitle: true,
-        // Menu Button
-        leading: Icon(
-          Icons.menu,
-          size: Responsive.height(0.038),
-        ),
-        actions: [
-          Icon(
-            CupertinoIcons.person_circle,
-            size: Responsive.height(0.04),
-          ),
-          SizedBox(
-            width: Responsive.width(0.03),
-          )
-        ],
-        //App Bar Center Logo and text Part
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image(
-              image: AssetImage(ImgPaths.appBarLogo),
-              height: Responsive.height(0.04),
-              fit: BoxFit.contain,
-            ),
-            SizedBox(
-              width: Responsive.width(0.019),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "PDP",
-                  style: TextStyle(
-                      height: Responsive.height(0.0013),
-                      fontSize: Responsive.height(0.023),
-                      fontWeight: FontWeight.w600),
-                ),
-                Text(
-                  "UNIVERSITY",
-                  style: TextStyle(
-                      height: Responsive.height(0.0012),
-                      fontSize: Responsive.height(0.023),
-                      fontWeight: FontWeight.w600),
-                )
-              ],
-            )
-          ],
-        ),
-      ),
+      // appBar: AppBar(
+      //   toolbarHeight: Responsive.height(0.09),
+      //   backgroundColor: AppColors.silver,
+      //   centerTitle: true,
+      //   // Menu Button
+      //   leading: Icon(
+      //     Icons.menu,
+      //     size: Responsive.height(0.038),
+      //   ),
+      //   actions: [
+      //     Icon(
+      //       CupertinoIcons.person_circle,
+      //       size: Responsive.height(0.04),
+      //     ),
+      //     SizedBox(
+      //       width: Responsive.width(0.03),
+      //     )
+      //   ],
+      //   //App Bar Center Logo and text Part
+      //   title: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Image(
+      //         image: AssetImage(ImgPaths.appBarLogo),
+      //         height: Responsive.height(0.04),
+      //         fit: BoxFit.contain,
+      //       ),
+      //       SizedBox(
+      //         width: Responsive.width(0.019),
+      //       ),
+      //       Column(
+      //         crossAxisAlignment: CrossAxisAlignment.start,
+      //         mainAxisAlignment: MainAxisAlignment.center,
+      //         children: [
+      //           Text(
+      //             "PDP",
+      //             style: TextStyle(
+      //                 height: Responsive.height(0.0013),
+      //                 fontSize: Responsive.height(0.023),
+      //                 fontWeight: FontWeight.w600),
+      //           ),
+      //           Text(
+      //             "UNIVERSITY",
+      //             style: TextStyle(
+      //                 height: Responsive.height(0.0012),
+      //                 fontSize: Responsive.height(0.023),
+      //                 fontWeight: FontWeight.w600),
+      //           )
+      //         ],
+      //       )
+      //     ],
+      //   ),
+      // ),
       body: SizedBox(
         width: double.infinity,
         child: Column(
@@ -109,7 +109,7 @@ class DiscoverScreen extends StatelessWidget {
                       image: AssetImage(ImgPaths.guyAndGirl2),
                       fit: BoxFit.cover)),
               child: Container(
-                margin: EdgeInsets.only(right: Responsive.width(0.037)),
+                margin: EdgeInsets.only(right: Responsive.height(0.02)),
                 alignment: Alignment.centerRight,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
