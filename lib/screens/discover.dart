@@ -104,56 +104,87 @@ class DiscoverScreen extends StatelessWidget {
               width: double.infinity,
               height: Responsive.height(0.3),
               decoration: BoxDecoration(
-                color: AppColors.darkCyanGreen,
-              ),
-              child: Stack(
-                children: [
-                  Image(
-                    image: AssetImage(ImgPaths.guyAndGirl),
-                    height: Responsive.height(0.3),
-                  ),
-                  Container(
-                    alignment: Alignment.topRight,
-                    child: Transform.translate(
-                      offset: Offset(-Responsive.width(0.0008), 0),
-                      child: Image(
-                        image: AssetImage(ImgPaths.strips),
-                        height: Responsive.height(0.5),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(right: Responsive.width(0.037)),
-                    alignment: Alignment.centerRight,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                  color: AppColors.darkCyanGreen,
+                  image: DecorationImage(
+                      image: AssetImage(ImgPaths.guyAndGirl2),
+                      fit: BoxFit.cover)),
+              child: Container(
+                margin: EdgeInsets.only(right: Responsive.width(0.037)),
+                alignment: Alignment.centerRight,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "BTEC Pearson",
-                              style: TextStyle(
-                                  color: AppColors.white,
-                                  fontSize: Responsive.height(0.025),
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            Text(
-                              "PDP Events",
-                              style: TextStyle(
-                                  color: AppColors.white,
-                                  fontSize: Responsive.height(0.02),
-                                  fontWeight: FontWeight.w400),
-                            )
-                          ],
+                        Text(
+                          "BTEC Pearson",
+                          style: TextStyle(
+                              color: AppColors.white,
+                              fontSize: Responsive.height(0.025),
+                              fontWeight: FontWeight.w400),
                         ),
+                        Text(
+                          "PDP Events",
+                          style: TextStyle(
+                              color: AppColors.white,
+                              fontSize: Responsive.height(0.02),
+                              fontWeight: FontWeight.w400),
+                        )
                       ],
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
+              // child: Stack(
+              //   children: [
+              //     Image(
+              //       image: AssetImage(ImgPaths.guyAndGirl),
+              //       height: Responsive.height(0.3),
+              //     ),
+              //     Container(
+              //       alignment: Alignment.topRight,
+              //       child: Transform.translate(
+              //         offset: Offset(-Responsive.width(0.0008), 0),
+              //         child: Image(
+              //           image: AssetImage(ImgPaths.strips),
+              //           height: Responsive.height(0.5),
+              //           fit: BoxFit.contain,
+              //         ),
+              //       ),
+              //     ),
+              //     Container(
+              //       margin: EdgeInsets.only(right: Responsive.width(0.037)),
+              //       alignment: Alignment.centerRight,
+              //       child: Row(
+              //         mainAxisAlignment: MainAxisAlignment.end,
+              //         children: [
+              //           Column(
+              //             mainAxisAlignment: MainAxisAlignment.center,
+              //             crossAxisAlignment: CrossAxisAlignment.start,
+              //             children: [
+              //               Text(
+              //                 "BTEC Pearson",
+              //                 style: TextStyle(
+              //                     color: AppColors.white,
+              //                     fontSize: Responsive.height(0.025),
+              //                     fontWeight: FontWeight.w400),
+              //               ),
+              //               Text(
+              //                 "PDP Events",
+              //                 style: TextStyle(
+              //                     color: AppColors.white,
+              //                     fontSize: Responsive.height(0.02),
+              //                     fontWeight: FontWeight.w400),
+              //               )
+              //             ],
+              //           ),
+              //         ],
+              //       ),
+              //     )
+              //   ],
+              // ),
             )
           ],
         ),
