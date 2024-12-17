@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_colors.dart';
 import 'package:my_pdp/common/app_responsive.dart';
@@ -84,7 +83,7 @@ class DiscoverScreen extends StatelessWidget {
                       image: AssetImage(ImgPaths.guyAndGirl2),
                       fit: BoxFit.cover)),
               child: Container(
-                margin: EdgeInsets.only(right: Responsive.height(0.02)),
+                margin: EdgeInsets.only(right: Responsive.width(0.037)),
                 alignment: Alignment.centerRight,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -112,55 +111,130 @@ class DiscoverScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              // child: Stack(
-              //   children: [
-              //     Image(
-              //       image: AssetImage(ImgPaths.guyAndGirl),
-              //       height: Responsive.height(0.3),
-              //     ),
-              //     Container(
-              //       alignment: Alignment.topRight,
-              //       child: Transform.translate(
-              //         offset: Offset(-Responsive.width(0.0008), 0),
-              //         child: Image(
-              //           image: AssetImage(ImgPaths.strips),
-              //           height: Responsive.height(0.5),
-              //           fit: BoxFit.contain,
-              //         ),
-              //       ),
-              //     ),
-              //     Container(
-              //       margin: EdgeInsets.only(right: Responsive.width(0.037)),
-              //       alignment: Alignment.centerRight,
-              //       child: Row(
-              //         mainAxisAlignment: MainAxisAlignment.end,
-              //         children: [
-              //           Column(
-              //             mainAxisAlignment: MainAxisAlignment.center,
-              //             crossAxisAlignment: CrossAxisAlignment.start,
-              //             children: [
-              //               Text(
-              //                 "BTEC Pearson",
-              //                 style: TextStyle(
-              //                     color: AppColors.white,
-              //                     fontSize: Responsive.height(0.025),
-              //                     fontWeight: FontWeight.w400),
-              //               ),
-              //               Text(
-              //                 "PDP Events",
-              //                 style: TextStyle(
-              //                     color: AppColors.white,
-              //                     fontSize: Responsive.height(0.02),
-              //                     fontWeight: FontWeight.w400),
-              //               )
-              //             ],
-              //           ),
-              //         ],
-              //       ),
-              //     )
-              //   ],
-              // ),
-            )
+            ),
+            SizedBox(
+              height: Responsive.height(0.015),
+            ),
+            Expanded(
+              child: Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: Responsive.width(0.025)),
+                child: Column(
+                  children: [
+                    Row(
+                      spacing: Responsive.width(0.015),
+                      children: [
+                        Image.asset(IconPaths.search),
+                        Text(
+                          "Discover",
+                          style: TextStyle(
+                              color: AppColors.black,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Inter"),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Responsive.height(0.017),
+                    ),
+                    Expanded(
+                      child: GridView.builder(
+                        itemCount: 3,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          childAspectRatio: 1 / 1.3,
+                          crossAxisCount: 3,
+                          crossAxisSpacing: Responsive.width(0.039),
+                        ),
+                        itemBuilder: (context, index) => Container(
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.circular(Responsive.width(0.029)),
+                            color: AppColors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: Responsive.width(0.019),
+                                  spreadRadius: Responsive.width(0.005)),
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(
+                                        Responsive.width(0.029)),
+                                    topRight: Radius.circular(
+                                        Responsive.width(0.029)),
+                                  ),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/images/discover${index + 1}.png"),
+                                          fit: BoxFit.cover),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                  child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: Responsive.height(0.007),
+                                  ),
+                                  Text(
+                                    "PDP",
+                                    style: TextStyle(
+                                      color: AppColors.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: Responsive.height(0.017),
+                                    ),
+                                  ),
+                                  Text(
+                                    "English Club",
+                                    style: TextStyle(
+                                      height: Responsive.height(0.0009),
+                                      color: AppColors.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: Responsive.height(0.017),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: Responsive.height(0.009),
+                                  ),
+                                  Row(
+                                    spacing: Responsive.width(0.005),
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.location_on_rounded,
+                                        color: Colors.red,
+                                        size: Responsive.height(0.023),
+                                      ),
+                                      Text(
+                                        "Event Hall",
+                                        style: TextStyle(
+                                          color: AppColors.grey,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: Responsive.height(0.013),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ))
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
