@@ -14,60 +14,6 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      // App Bar Part
-      // appBar: AppBar(
-      //   toolbarHeight: Responsive.height(0.09),
-      //   backgroundColor: AppColors.silver,
-      //   centerTitle: true,
-      //   // Menu Button
-      //   leading: Icon(
-      //     Icons.menu,
-      //     size: Responsive.height(0.038),
-      //   ),
-      //   actions: [
-      //     Icon(
-      //       CupertinoIcons.person_circle,
-      //       size: Responsive.height(0.04),
-      //     ),
-      //     SizedBox(
-      //       width: Responsive.width(0.03),
-      //     )
-      //   ],
-      //   //App Bar Center Logo and text Part
-      //   title: Row(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       Image(
-      //         image: AssetImage(ImgPaths.appBarLogo),
-      //         height: Responsive.height(0.04),
-      //         fit: BoxFit.contain,
-      //       ),
-      //       SizedBox(
-      //         width: Responsive.width(0.019),
-      //       ),
-      //       Column(
-      //         crossAxisAlignment: CrossAxisAlignment.start,
-      //         mainAxisAlignment: MainAxisAlignment.center,
-      //         children: [
-      //           Text(
-      //             "PDP",
-      //             style: TextStyle(
-      //                 height: Responsive.height(0.0013),
-      //                 fontSize: Responsive.height(0.023),
-      //                 fontWeight: FontWeight.w600),
-      //           ),
-      //           Text(
-      //             "UNIVERSITY",
-      //             style: TextStyle(
-      //                 height: Responsive.height(0.0012),
-      //                 fontSize: Responsive.height(0.023),
-      //                 fontWeight: FontWeight.w600),
-      //           )
-      //         ],
-      //       )
-      //     ],
-      //   ),
-      // ),
       body: SizedBox(
         width: double.infinity,
         child: Column(

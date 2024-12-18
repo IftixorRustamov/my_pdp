@@ -21,3 +21,4 @@ class AppStrings {
   static const String pdpCardInfo =
       "O'zbekistonda IT mutaxassislar elitasini shakllantirishni o'z oldiga maqsad qilib qo'ygan ekotizim";
 }
+
