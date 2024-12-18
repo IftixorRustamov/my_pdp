@@ -35,7 +35,8 @@ class PDPInfoCard extends StatelessWidget {
           ),
           // Subtitle
           Text(
-            AppStrings.info,
+            AppStrings.pdpCardInfo,
+
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: AppColors.white,
@@ -46,12 +47,12 @@ class PDPInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               PDPInfoTile(
-                title: AppStrings.info,
-                subtitle: AppStrings.info,
+                title: AppStrings.fiveYears,
+                subtitle: AppStrings.fiveYearsSub,
               ),
               PDPInfoTile(
-                title: AppStrings.info,
-                subtitle: AppStrings.aboutUniversity,
+                title: AppStrings.ninetyPercent,
+                subtitle: AppStrings.ninetyPercentSub,
               ),
             ],
           ),
@@ -59,12 +60,12 @@ class PDPInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               PDPInfoTile(
-                title: AppStrings. aboutUniversity,
-                subtitle: AppStrings.aboutUniversity,
+                title: AppStrings.twoHundredPlus,
+                subtitle: AppStrings.twoHundredPlusSub,
               ),
               PDPInfoTile(
-                title: AppStrings.eventsAndHolidays,
-                subtitle: AppStrings.eventsAndHolidays,
+                title: AppStrings.twoThousandPlus,
+                subtitle: AppStrings.twoThousandPlusSub,
               ),
             ],
           ),

@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_strings.dart';
 import 'package:my_pdp/common/icon_paths.dart';
 import 'package:my_pdp/screens/about_page.dart';
-import 'package:my_pdp/screens/discover.dart';
+import 'package:my_pdp/screens/guests.dart';
 import 'package:my_pdp/screens/subjects_page.dart';
 
 import '../common/app_colors.dart';
 import '../common/app_responsive.dart';
 import '../common/img_paths.dart';
+import 'discover.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -24,6 +25,7 @@ class _MainPageState extends State<MainPage> {
     SubjectsPage(),
     AboutPage(),
     DiscoverScreen(),
+    // GuestsScreen()
   ];
 
   @override
