@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_colors.dart';
 import 'package:my_pdp/common/app_responsive.dart';
-import 'package:my_pdp/common/icon_paths.dart';
+import 'package:my_pdp/common/app_strings.dart';
 import 'package:my_pdp/common/img_paths.dart';
+import 'package:my_pdp/widgets/header_part_wg.dart';
+
+import '../common/icon_paths.dart';
 
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
@@ -16,34 +19,7 @@ class DiscoverScreen extends StatelessWidget {
         child: Column(
           children: [
             // Body Top Text Part
-            Container(
-              width: double.infinity,
-              height: Responsive.height(0.15),
-              decoration: BoxDecoration(color: AppColors.darkCyanGreen),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "BTEC Pearson",
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: Responsive.height(0.023)),
-                  ),
-                  SizedBox(
-                    height: Responsive.height(0.013),
-                  ),
-                  Text(
-                    "PDP University Events",
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: Responsive.height(0.03)),
-                  ),
-                  SizedBox(
-                    height: Responsive.height(0.021),
-                  ),
-                ],
-              ),
-            ),
+            HeaderPartWg(headerInfo: AppStrings.pdpEvents),
             SizedBox(height: Responsive.height(0.02)),
             // Nerd Guy and Weird Girl Part
             Container(
