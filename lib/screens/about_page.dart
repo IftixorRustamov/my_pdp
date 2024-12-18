@@ -13,41 +13,40 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              height: Responsive.height(0.15),
-              decoration: BoxDecoration(color: AppColors.darkCyanGreen),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "BTEC Pearson",
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: Responsive.height(0.023)),
-                  ),
-                  SizedBox(
-                    height: Responsive.height(0.013),
-                  ),
-                  Text(
-                    "PDP University Events",
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: Responsive.height(0.03)),
-                  ),
-                  SizedBox(
-                    height: Responsive.height(0.021),
-                  ),
-                  SizedBox(height: Responsive.height(0.02)),
-                ],
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: double.infinity,
+            height: Responsive.height(0.15),
+            decoration: BoxDecoration(color: AppColors.darkCyanGreen),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  "BTEC Pearson",
+                  style: TextStyle(
+                      color: AppColors.white,
+                      fontSize: Responsive.height(0.023)),
+                ),
+                SizedBox(
+                  height: Responsive.height(0.013),
+                ),
+                Text(
+                  "PDP University Events",
+                  style: TextStyle(
+                      color: AppColors.white,
+                      fontSize: Responsive.height(0.03)),
+                ),
+                SizedBox(
+                  height: Responsive.height(0.021),
+                ),
+                SizedBox(height: Responsive.height(0.02)),
+              ],
             ),
-            SingleChildScrollView(
+          ),
+          Expanded(
+            child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Padding(
                 padding:
@@ -90,7 +89,7 @@ class AboutPage extends StatelessWidget {
                     SizedBox(
                       height: Responsive.height(0.3),
                     ),
-
+            
                     //second page start
                     Container(
                       width: double.infinity,
@@ -106,8 +105,10 @@ class AboutPage extends StatelessWidget {
                             height: Responsive.height(0.05),
                           ),
                           Container(
+                            height: Responsive.height(0.28),
+                            width: Responsive.width(0.7),
                             padding: EdgeInsets.symmetric(
-                                vertical: Responsive.width(0.1), horizontal: Responsive.height(0.05)),
+                                horizontal: Responsive.height(0.025)),
                             decoration: BoxDecoration(
                                 color: AppColors.white,
                                 borderRadius: BorderRadius.circular(15),
@@ -123,20 +124,23 @@ class AboutPage extends StatelessWidget {
                                         5, 5), // Position of the shadow (x, y)
                                   ),
                                 ]),
-
+            
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset("assets/images/about_mission.png"),
                                 Text(
                                   "PDP University",
-                                  style: TextStyle(fontSize: 30,color: AppColors.green),
+                                  style: TextStyle(fontSize: 30,color: AppColors.green, fontWeight: FontWeight.w700),
                                 ),
                                 Text(
                                   "Mission",
-                                  style: TextStyle(fontSize: 30,color: AppColors.green),
+                                  style: TextStyle(fontSize: 30,color: AppColors.green, fontWeight: FontWeight.w700),
                                 ),
-                                SizedBox(height: 20,),
-                                Text('Raqamli texnologiyalar yordamida dunyoni yaxshi tarafga o’zgartira oladigan mutaxassislarni tayyorlaymiz.')
+                                SizedBox(height: Responsive.height(0.003),),
+                                Text('Raqamli texnologiyalar yordamida dunyoni yaxshi tarafga o’zgartira oladigan mutaxassislarni tayyorlaymiz.',
+                                  style: TextStyle(fontSize: 15,color: AppColors.black, fontWeight: FontWeight.w400),
+                                )
                               ],
                             ),
                           )
@@ -154,8 +158,8 @@ class AboutPage extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
