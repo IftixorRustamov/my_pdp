@@ -14,37 +14,9 @@ class AboutPage extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Container(
-            width: double.infinity,
-            height: Responsive.height(0.15),
-            decoration: BoxDecoration(color: AppColors.darkCyanGreen),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "BTEC Pearson",
-                  style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: Responsive.height(0.023)),
-                ),
-                SizedBox(
-                  height: Responsive.height(0.013),
-                ),
-                Text(
-                  "PDP University Events",
-                  style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: Responsive.height(0.03)),
-                ),
-                SizedBox(
-                  height: Responsive.height(0.021),
-                ),
-                SizedBox(height: Responsive.height(0.02)),
-              ],
-            ),
-          ),
+          HeaderPartWg(headerInfo: 'PDP University Informations',),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
