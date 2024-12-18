@@ -6,4 +6,8 @@ class IconPaths {
   static const String search = "assets/icons/search.png";
   static const String share = "assets/icons/share.png";
   static const String target = "assets/icons/target.png";
+  static const String information2 = "assets/icons/information2.png";
+  static const String achievement2 = "assets/icons/achievement2.png";
+  static const String bookshelf2 = "assets/icons/bookshelf-library.png";
+  static const String bookshelf3 = "assets/icons/bookshelf-library2.png";
 }

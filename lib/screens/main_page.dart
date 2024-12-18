@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_strings.dart';
 import 'package:my_pdp/common/icon_paths.dart';
 import 'package:my_pdp/screens/about_page.dart';
-import 'package:my_pdp/screens/guests.dart';
 import 'package:my_pdp/screens/subjects_page.dart';
 
 import '../common/app_colors.dart';
@@ -25,7 +24,6 @@ class _MainPageState extends State<MainPage> {
     SubjectsPage(),
     AboutPage(),
     DiscoverScreen(),
-    // GuestsScreen()
   ];
 
   @override
@@ -98,15 +96,36 @@ class _MainPageState extends State<MainPage> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset(IconPaths.bookshelf),
+            icon: Image(
+              image: AssetImage(IconPaths.bookshelf3),
+              height: Responsive.width(0.07),
+            ),
+            activeIcon: Image(
+              image: AssetImage(IconPaths.bookshelf2),
+              height: Responsive.width(0.07),
+            ),
             label: AppStrings.subjects,
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(IconPaths.information),
+            icon: Image(
+              image: AssetImage(IconPaths.information2),
+              height: Responsive.width(0.07),
+            ),
+            activeIcon: Image(
+              image: AssetImage(IconPaths.information),
+              height: Responsive.width(0.07),
+            ),
             label: AppStrings.aboutUniversity,
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(IconPaths.achievement),
+            icon: Image(
+              image: AssetImage(IconPaths.achievement),
+              height: Responsive.width(0.07),
+            ),
+            activeIcon: Image(
+              image: AssetImage(IconPaths.achievement2),
+              height: Responsive.width(0.07),
+            ),
             label: AppStrings.eventsAndHolidays,
           ),
         ],

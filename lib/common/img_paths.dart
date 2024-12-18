@@ -11,6 +11,7 @@ class ImgPaths {
   static String guest3 = "assets/images/guest3.png";
   static String strips = "assets/images/strips.png";
   static String guyAndGirl2 = "assets/images/guy.png";
+  
 
   //Iftihor images
   static String cardVideo = "assets/images/cardVideo.png";
