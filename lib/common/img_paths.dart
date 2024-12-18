@@ -12,18 +12,9 @@ class ImgPaths {
   static String strips = "assets/images/strips.png";
   static String guyAndGirl2 = "assets/images/guy.png";
 
-
-
-
-
   //Iftihor images
+  static String cardVideo = "assets/images/cardVideo.png";
+  static String cardVideo1 = "assets/images/cardVideo1.png";
 
-
-
-
-
-
-
-
-  //Abzal images
+//Abzal images
 }
