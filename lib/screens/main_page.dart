@@ -9,6 +9,7 @@ import 'package:my_pdp/screens/subjects_page.dart';
 import '../common/app_colors.dart';
 import '../common/app_responsive.dart';
 import '../common/img_paths.dart';
+import 'discover.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -23,8 +24,8 @@ class _MainPageState extends State<MainPage> {
   final List<Widget> _pages = [
     SubjectsPage(),
     AboutPage(),
-    // DiscoverScreen(),
-    GuestsScreen()
+    DiscoverScreen(),
+    // GuestsScreen()
   ];
 
   @override

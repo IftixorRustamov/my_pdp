@@ -18,7 +18,7 @@ class AppStrings {
   static const String pdpEvents = "PDP University Events";
   static const String pdpInfo = "PDP University Information";
   static const String pdpModules = "PDP University Modules";
+  static const String podcasts = "Podcasts";
   static const String pdpCardInfo =
       "O'zbekistonda IT mutaxassislar elitasini shakllantirishni o'z oldiga maqsad qilib qo'ygan ekotizim";
 }
-
