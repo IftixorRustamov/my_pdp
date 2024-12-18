@@ -17,5 +17,6 @@ class ImgPaths {
   static String cardVideo = "assets/images/cardVideo.png";
   static String cardVideo1 = "assets/images/cardVideo1.png";
 
-//Abzal images
+  //Abzal images
+
 }
