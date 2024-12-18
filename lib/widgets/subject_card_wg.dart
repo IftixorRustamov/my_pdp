@@ -13,7 +13,10 @@ class SubjectCardWg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: EdgeInsets.symmetric(
+        horizontal: Responsive.width(0.01),
+        vertical: Responsive.height(0.012),
+      ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -25,23 +28,23 @@ class SubjectCardWg extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(10),
       ),
-      width: Responsive.width(0.25),
-      height: Responsive.height(0.4),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Align(
             alignment: Alignment.center,
-            child: Image.asset("assets/images/image${index + 1}.png"),
+            child: Image.asset(
+              "assets/images/image${index + 1}.png",
+            ),
           ),
           Text(
             cardNames[index],
-            maxLines: 2,
+            maxLines: 3,
             style: TextStyle(
               color: AppColors.white,
               fontWeight: FontWeight.w600,
-              fontSize: Responsive.height(0.011),
+              fontSize: Responsive.height(0.012),
             ),
           ),
           Row(

@@ -26,9 +26,10 @@ class SubjectsPage extends StatelessWidget {
                     child: GridView.builder(
                       itemCount: 9,
                       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                        maxCrossAxisExtent: Responsive.width(0.31),
+                        maxCrossAxisExtent: Responsive.width(0.41),
+                        childAspectRatio: 0.82/1,
                         mainAxisSpacing: Responsive.height(0.015),
-                        crossAxisSpacing: Responsive.width(0.033),
+                        crossAxisSpacing: Responsive.width(0.025),
                       ),
                       itemBuilder: (BuildContext context, int index) =>
                           SubjectCardWg(
