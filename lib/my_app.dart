@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_responsive.dart';
+import 'package:my_pdp/screens/auth_page.dart';
 import 'package:my_pdp/screens/main_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     print(Responsive.screenHeight);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: AuthPage(),
     );
   }
 }

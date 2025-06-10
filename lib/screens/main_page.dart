@@ -30,33 +30,37 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      // App Bar Part
+      // App Bar Part - Updated to match screenshot design
       appBar: AppBar(
         toolbarHeight: Responsive.height(0.09),
-        backgroundColor: AppColors.silver,
+        backgroundColor: AppColors.darkCyanGreen, // Matched background color from screenshot
         centerTitle: true,
         // Menu Button
         leading: Icon(
           Icons.menu,
           size: Responsive.height(0.038),
+          color: AppColors.white, // Ensured icon is white on dark background
         ),
         actions: [
           Icon(
             CupertinoIcons.person_circle,
             size: Responsive.height(0.04),
+            color: AppColors.white, // Ensured icon is white on dark background
           ),
           SizedBox(
             width: Responsive.width(0.03),
           )
         ],
-        //App Bar Center Logo and text Part
+        //App Bar Center Logo and text Part - Updated for dark background
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Assuming appBarLogo is a white or transparent logo
             Image(
               image: AssetImage(ImgPaths.appBarLogo),
               height: Responsive.height(0.04),
               fit: BoxFit.contain,
+              color: AppColors.green, // Assuming the logo itself should be green on dark background
             ),
             SizedBox(
               width: Responsive.width(0.019),
@@ -68,16 +72,20 @@ class _MainPageState extends State<MainPage> {
                 Text(
                   "PDP",
                   style: TextStyle(
-                      height: Responsive.height(0.0013),
-                      fontSize: Responsive.height(0.023),
-                      fontWeight: FontWeight.w600),
+                    height: Responsive.height(0.0013),
+                    fontSize: Responsive.height(0.023),
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.white, // Changed text color to white
+                  ),
                 ),
                 Text(
                   AppStrings.university,
                   style: TextStyle(
-                      height: Responsive.height(0.0012),
-                      fontSize: Responsive.height(0.023),
-                      fontWeight: FontWeight.w600),
+                    height: Responsive.height(0.0012),
+                    fontSize: Responsive.height(0.023),
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.white, // Changed text color to white
+                  ),
                 )
               ],
             )
@@ -89,6 +97,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: AppColors.white,
         currentIndex: _currentIndex,
         selectedItemColor: AppColors.green,
+        unselectedItemColor: AppColors.grey, // Ensured unselected items are grey
         onTap: (index) {
           setState(() {
             _currentIndex = index;
@@ -97,34 +106,25 @@ class _MainPageState extends State<MainPage> {
         items: [
           BottomNavigationBarItem(
             icon: Image(
-              image: AssetImage(IconPaths.bookshelf3),
+              image: AssetImage(IconPaths.bookshelf3), // Using non-active icon
               height: Responsive.width(0.07),
-            ),
-            activeIcon: Image(
-              image: AssetImage(IconPaths.bookshelf2),
-              height: Responsive.width(0.07),
+              color: _currentIndex == 0 ? AppColors.green : AppColors.grey, // Manually set color
             ),
             label: AppStrings.subjects,
           ),
           BottomNavigationBarItem(
             icon: Image(
-              image: AssetImage(IconPaths.information2),
+              image: AssetImage(IconPaths.information2), // Using non-active icon
               height: Responsive.width(0.07),
-            ),
-            activeIcon: Image(
-              image: AssetImage(IconPaths.information),
-              height: Responsive.width(0.07),
+              color: _currentIndex == 1 ? AppColors.green : AppColors.grey, // Manually set color
             ),
             label: AppStrings.aboutUniversity,
           ),
           BottomNavigationBarItem(
             icon: Image(
-              image: AssetImage(IconPaths.achievement),
+              image: AssetImage(IconPaths.achievement), // Using non-active icon
               height: Responsive.width(0.07),
-            ),
-            activeIcon: Image(
-              image: AssetImage(IconPaths.achievement2),
-              height: Responsive.width(0.07),
+              color: _currentIndex == 2 ? AppColors.green : AppColors.grey, // Manually set color
             ),
             label: AppStrings.eventsAndHolidays,
           ),
@@ -132,13 +132,4 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
-
-// Widget _buildIcon(String assetPath, int index) {
-//   return Image.asset(
-//     color: _currentIndex == index ? AppColors.green : AppColors.grey,
-//     assetPath,
-//     height: 40,
-//     width: 40,
-//   );
-// }
 }
