@@ -26,6 +26,17 @@ class _MainPageState extends State<MainPage> {
     DiscoverScreen(),
   ];
 
+  // Function to show a SnackBar message
+  void _showFeatureComingSoon(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("This feature will be available in the next version!"),
+        duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating, // Make it float for better visibility
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,17 +46,28 @@ class _MainPageState extends State<MainPage> {
         toolbarHeight: Responsive.height(0.09),
         backgroundColor: AppColors.darkCyanGreen, // Matched background color from screenshot
         centerTitle: true,
-        // Menu Button
-        leading: Icon(
-          Icons.menu,
-          size: Responsive.height(0.038),
-          color: AppColors.white, // Ensured icon is white on dark background
+        // Menu Button - Now interactive
+        leading: IconButton(
+          icon: Icon(
+            Icons.menu,
+            size: Responsive.height(0.038),
+            color: AppColors.white, // Ensured icon is white on dark background
+          ),
+          onPressed: () {
+            _showFeatureComingSoon(context);
+          },
         ),
         actions: [
-          Icon(
-            CupertinoIcons.person_circle,
-            size: Responsive.height(0.04),
-            color: AppColors.white, // Ensured icon is white on dark background
+          // Profile Icon - Now interactive
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.person_circle,
+              size: Responsive.height(0.04),
+              color: AppColors.white, // Ensured icon is white on dark background
+            ),
+            onPressed: () {
+              _showFeatureComingSoon(context);
+            },
           ),
           SizedBox(
             width: Responsive.width(0.03),

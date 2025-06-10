@@ -1,9 +1,23 @@
+// lib/screens/about_page.dart
+
 import 'package:flutter/material.dart';
+import 'package:my_pdp/common/app_strings.dart';
+import 'package:my_pdp/common/app_colors.dart';
+import 'package:my_pdp/common/app_responsive.dart';
+
+// Import data
+import 'package:my_pdp/data/person_data.dart'; // Contains PersonInfo, ContactDetails, teamMembers, contactDetails
+import 'package:my_pdp/data/pdp_ecosystem_data.dart'; // Data for ecosystem and grant
+import 'package:my_pdp/data/pdp_history_data.dart'; // NEW: Import history data
+
+// Import widgets
+import 'package:my_pdp/widgets/header_part_wg.dart';
 import 'package:my_pdp/widgets/pdp_info_card_wg.dart';
-import '../common/app_colors.dart';
-import '../common/app_responsive.dart';
-import '../common/app_strings.dart';
-import '../widgets/header_part_wg.dart';
+import 'package:my_pdp/widgets/about_uni/contact_info_section.dart';
+import 'package:my_pdp/widgets/about_uni/person_card.dart';
+import 'package:my_pdp/widgets/about_uni/pdp_ecosystem_service_tile.dart';
+import 'package:my_pdp/widgets/about_uni/unicorn_grant_section.dart';
+import 'package:my_pdp/widgets/about_uni/pdp_history_card.dart'; // NEW: Import the history card
 
 
 class AboutPage extends StatelessWidget {
@@ -16,53 +30,54 @@ class AboutPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          HeaderPartWg(headerInfo: 'PDP University Informations',),
+          HeaderPartWg(headerInfo: 'PDP University Informations'),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Original "Biz Haqimizda" section
                     Text(
                       "Biz Haqimizda",
                       style: TextStyle(
                         color: AppColors.green,
-                        fontSize: 25,
+                        fontSize: Responsive.height(0.03),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: Responsive.height(0.015),
                     ),
                     Text(
                       "Raqamli texnologiyalar yordamida dunyoni yaxshi tarafga o’zgartira oladigan mutaxassislarni tayyorlaymiz, shu sohadagi mahsulot va xizmatlarni ishlab chiqaramiz.",
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: AppColors.black, fontSize: 13),
+                      style: TextStyle(
+                          color: AppColors.black,
+                          fontSize: Responsive.height(0.016)),
+                      textAlign: TextAlign.justify,
                     ),
                     Container(
                       width: double.infinity,
                       height: Responsive.height(0.4),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Image.asset(
-                            "assets/images/content.png",
-                            scale: 3,
-                          ),
-                        ],
+                      alignment: Alignment.bottomRight,
+                      child: Image.asset(
+                        "assets/images/content.png", // Placeholder
+                        height: Responsive.height(0.2),
+                        fit: BoxFit.contain,
                       ),
                     ),
-                    SizedBox(
-                      height: Responsive.height(0.3),
-                    ),
-            
-                    //second page start
+                    SizedBox(height: Responsive.height(0.05)),
+
+                    // NEW: PDP History Card
+                    const PdpHistoryCard(),
+                    SizedBox(height: Responsive.height(0.05)),
+
+
+                    // University Priorities Section
                     Container(
                       width: double.infinity,
                       child: Column(
@@ -71,61 +86,59 @@ class AboutPage extends StatelessWidget {
                         children: [
                           Text(
                             "University priorities",
-                            style: TextStyle(fontSize: 30),
+                            style: TextStyle(
+                              fontSize: Responsive.height(0.03),
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.darkCyanGreen,
+                            ),
                           ),
                           SizedBox(
-                            height: Responsive.height(0.05),
+                            height: Responsive.height(0.03),
                           ),
-                          Container(
-                            height: Responsive.height(0.28),
-                            width: Responsive.width(0.7),
-                            padding: EdgeInsets.symmetric(
-                                horizontal: Responsive.height(0.025)),
-                            decoration: BoxDecoration(
-                                color: AppColors.white,
-                                borderRadius: BorderRadius.circular(15),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    // Shadow color
-                                    spreadRadius: 2,
-                                    // How much the shadow spreads
-                                    blurRadius: 10,
-                                    // Softness of the shadow
-                                    offset: Offset(
-                                        5, 5), // Position of the shadow (x, y)
-                                  ),
-                                ]),
-            
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset("assets/images/about_mission.png"),
-                                Text(
-                                  "PDP University",
-                                  style: TextStyle(fontSize: 30,color: AppColors.green, fontWeight: FontWeight.w700),
-                                ),
-                                Text(
-                                  "Mission",
-                                  style: TextStyle(fontSize: 30,color: AppColors.green, fontWeight: FontWeight.w700),
-                                ),
-                                SizedBox(height: Responsive.height(0.003),),
-                                Text('Raqamli texnologiyalar yordamida dunyoni yaxshi tarafga o’zgartira oladigan mutaxassislarni tayyorlaymiz.',
-                                  style: TextStyle(fontSize: 15,color: AppColors.black, fontWeight: FontWeight.w400),
-                                )
-                              ],
-                            ),
-                          )
+                          const PDPInfoCard(),
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: Responsive.height(0.3),
+                    SizedBox(height: Responsive.height(0.05)),
+
+                    // PDP Ecosystem Section
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: Responsive.width(0.01)),
+                        child: Text(
+                          "PDP Ecosystem",
+                          style: TextStyle(
+                            fontSize: Responsive.height(0.028),
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.darkCyanGreen,
+                          ),
+                        ),
+                      ),
                     ),
-                    PDPInfoCard(),
-                    SizedBox(
-                      height: Responsive.height(0.2),
+                    SizedBox(height: Responsive.height(0.01)),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      primary: false,
+                      itemCount: pdpEcosystemServices.length,
+                      itemBuilder: (context, index) {
+                        return PdpEcosystemServiceTile(service: pdpEcosystemServices[index]);
+                      },
                     ),
+                    SizedBox(height: Responsive.height(0.05)),
+
+                    // Unicorn 3.0 Grant Section
+                    UnicornGrantSection(grantData: unicornGrantData),
+                    SizedBox(height: Responsive.height(0.05)),
+
+                    // Odilbek Mirzayev's & Jiemurat Mambetkarimov's Info
+                    ...teamMembers.map((person) => PersonCard(person: person)).toList(),
+                    SizedBox(height: Responsive.height(0.05)),
+
+                    // Location & Contact Info
+                    ContactInfoSection(contact: contactDetails),
+                    SizedBox(height: Responsive.height(0.05)),
                   ],
                 ),
               ),

@@ -13,7 +13,7 @@ class HeaderPartWg extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: Responsive.height(0.15),
+      height: Responsive.height(0.13),
       decoration: BoxDecoration(color: AppColors.darkCyanGreen),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
