@@ -8,7 +8,7 @@ import 'package:my_pdp/common/app_responsive.dart';
 // Import data
 import 'package:my_pdp/data/person_data.dart'; // Contains PersonInfo, ContactDetails, teamMembers, contactDetails
 import 'package:my_pdp/data/pdp_ecosystem_data.dart'; // Data for ecosystem and grant
-import 'package:my_pdp/data/pdp_history_data.dart'; // NEW: Import history data
+import 'package:my_pdp/data/pdp_history_data.dart'; // Import history data
 
 // Import widgets
 import 'package:my_pdp/widgets/header_part_wg.dart';
@@ -16,8 +16,9 @@ import 'package:my_pdp/widgets/pdp_info_card_wg.dart';
 import 'package:my_pdp/widgets/about_uni/contact_info_section.dart';
 import 'package:my_pdp/widgets/about_uni/person_card.dart';
 import 'package:my_pdp/widgets/about_uni/pdp_ecosystem_service_tile.dart';
-import 'package:my_pdp/widgets/about_uni/unicorn_grant_section.dart';
-import 'package:my_pdp/widgets/about_uni/pdp_history_card.dart'; // NEW: Import the history card
+import 'package:my_pdp/widgets/about_uni/unicorn_grant_section.dart'; // Keep this import for now if other pages might use it.
+import 'package:my_pdp/widgets/about_uni/pdp_history_card.dart';
+import 'package:my_pdp/widgets/about_uni/pdp_details_card.dart'; // NEW: Import the new details card
 
 
 class AboutPage extends StatelessWidget {
@@ -72,11 +73,6 @@ class AboutPage extends StatelessWidget {
                     ),
                     SizedBox(height: Responsive.height(0.05)),
 
-                    // NEW: PDP History Card
-                    const PdpHistoryCard(),
-                    SizedBox(height: Responsive.height(0.05)),
-
-
                     // University Priorities Section
                     Container(
                       width: double.infinity,
@@ -128,12 +124,12 @@ class AboutPage extends StatelessWidget {
                     ),
                     SizedBox(height: Responsive.height(0.05)),
 
-                    // Unicorn 3.0 Grant Section
-                    UnicornGrantSection(grantData: unicornGrantData),
+                    // PDP History Card
+                    const PdpHistoryCard(),
                     SizedBox(height: Responsive.height(0.05)),
 
-                    // Odilbek Mirzayev's & Jiemurat Mambetkarimov's Info
-                    ...teamMembers.map((person) => PersonCard(person: person)).toList(),
+                    // NEW: More About PDP Card (replaces Unicorn Grant and Person Cards directly)
+                    const PdpDetailsCard(),
                     SizedBox(height: Responsive.height(0.05)),
 
                     // Location & Contact Info

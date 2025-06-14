@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_pdp/common/app_colors.dart';
 import 'package:my_pdp/common/app_responsive.dart';
-
-import '../../data/course_data.dart';
+import 'package:my_pdp/data/course_data.dart'; // Ensure Course and CourseUnit are defined here
 
 class CourseExpansionTile extends StatelessWidget {
   final Course course;
@@ -20,37 +19,33 @@ class CourseExpansionTile extends StatelessWidget {
       color: AppColors.white,
       child: ExpansionTile(
         tilePadding: EdgeInsets.symmetric(
-            horizontal: Responsive.width(0.05), // Increased padding for title
+            horizontal: Responsive.width(0.05),
             vertical: Responsive.height(0.015)),
-        // Increased vertical padding for title
         title: Text(
           course.name,
           style: TextStyle(
             fontWeight: FontWeight.w700,
-            // Make title bolder
             fontSize: Responsive.height(0.02),
-            // Slightly larger font size for title
-            color: AppColors
-                .darkCyanGreen, // Using darkCyanGreen for primary title color
+            color: AppColors.darkCyanGreen,
           ),
         ),
         collapsedBackgroundColor: AppColors.white,
-        // Background when collapsed
         backgroundColor: AppColors.white,
-        // Background when expanded
         collapsedShape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         iconColor: AppColors.green,
-        // Green arrow icon
         collapsedIconColor: AppColors.green,
-        // Green arrow icon when collapsed
         children: [
-          // Header for the units table
-          Padding(
+          // Header for the units table with distinct background
+          Container(
             padding: EdgeInsets.symmetric(
-                horizontal: Responsive.width(0.06), // Adjusted padding
-                vertical: Responsive.height(0.01)), // Adjusted padding
+                horizontal: Responsive.width(0.03),
+                vertical: Responsive.height(0.012)),
+            decoration: BoxDecoration(
+              color: AppColors.darkCyanGreen, // Dark background for header row
+              borderRadius: BorderRadius.vertical(top: Radius.circular(0), bottom: Radius.circular(0)), // Adjust corners
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -59,9 +54,9 @@ class CourseExpansionTile extends StatelessWidget {
                   child: Text(
                     "Unit",
                     style: TextStyle(
-                        fontSize: Responsive.height(0.016),
+                        fontSize: Responsive.height(0.017), // Slightly larger font
                         fontWeight: FontWeight.bold,
-                        color: AppColors.darkCyanGreen),
+                        color: AppColors.white), // White text for header
                   ),
                 ),
                 Expanded(
@@ -70,9 +65,9 @@ class CourseExpansionTile extends StatelessWidget {
                     "I-semester",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: Responsive.height(0.016),
+                        fontSize: Responsive.height(0.017),
                         fontWeight: FontWeight.bold,
-                        color: AppColors.darkCyanGreen),
+                        color: AppColors.white),
                   ),
                 ),
                 Expanded(
@@ -81,22 +76,25 @@ class CourseExpansionTile extends StatelessWidget {
                     "II-semester",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: Responsive.height(0.016),
+                        fontSize: Responsive.height(0.017),
                         fontWeight: FontWeight.bold,
-                        color: AppColors.darkCyanGreen),
+                        color: AppColors.white),
                   ),
                 ),
               ],
             ),
           ),
-          Divider(height: 1, color: AppColors.silver),
-          // Lighter divider color
+          // No Divider needed directly after a colored container
 
-          ...course.units.map((unit) {
-            return Padding(
+          // List of units with alternating row colors
+          ...course.units.asMap().entries.map((entry) {
+            int idx = entry.key;
+            var unit = entry.value;
+            return Container(
+              color: idx % 2 == 0 ? AppColors.white : AppColors.silver, // Alternating row colors
               padding: EdgeInsets.symmetric(
-                  horizontal: Responsive.width(0.06), // Adjusted padding
-                  vertical: Responsive.height(0.008)), // Adjusted padding
+                  horizontal: Responsive.width(0.06),
+                  vertical: Responsive.height(0.01)), // Consistent padding
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -106,17 +104,6 @@ class CourseExpansionTile extends StatelessWidget {
                       unit.unit,
                       style: TextStyle(
                         fontSize: Responsive.height(0.015),
-                        color: AppColors.black, // Ensure text is readable
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Text(
-                      unit.iSemesterHours ?? "",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: Responsive.height(0.015),
                         color: AppColors.black,
                       ),
                     ),
@@ -124,11 +111,24 @@ class CourseExpansionTile extends StatelessWidget {
                   Expanded(
                     flex: 1,
                     child: Text(
-                      unit.iiSemesterHours ?? "",
+                      unit.iSemesterHours ?? "-", // Use a dash for null/empty
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: Responsive.height(0.015),
-                        color: AppColors.black,
+                        color: AppColors.green, // Green for semester hours
+                        fontWeight: FontWeight.w600, // Make them stand out
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      unit.iiSemesterHours ?? "-", // Use a dash for null/empty
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: Responsive.height(0.015),
+                        color: AppColors.green, // Green for semester hours
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -136,8 +136,7 @@ class CourseExpansionTile extends StatelessWidget {
               ),
             );
           }).toList(),
-          SizedBox(height: Responsive.height(0.015)),
-          // Add space at the bottom of expansion
+          SizedBox(height: Responsive.height(0.015)), // Space at the bottom of expansion
         ],
       ),
     );
